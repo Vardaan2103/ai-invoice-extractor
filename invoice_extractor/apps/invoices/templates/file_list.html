@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Files</title>
+</head>
+<body>
+    <h1>Uploaded Files</h1>
+
+    <ul>
+        {% for file in files %}
+            <li>
+                <h3>{{ file.file_name }}</h3>
+                <a href="{{ file.uploaded_file.url }}" target="_blank">View File</a><br>
+                <pre>{{ file.json_data|json_script:"jsonData" }}</pre>  <!-- Display JSON Data -->
+            </li>
+        {% empty %}
+            <p>No files uploaded yet.</p>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{% url 'upload_file' %}">Upload another file</a>
+</body>
+</html>

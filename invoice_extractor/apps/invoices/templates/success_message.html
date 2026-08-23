@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+</head>
+<body>
+    <h1>File Processed Successfully!</h1>
+
+    <h2>Generated Output:</h2>
+    <pre>{{ output_cleaned }}</pre>
+    
+    <p>Data saved to the database!</p>
+
+    <a href="{% url 'file_list' %}">View all uploaded files</a>
+</body>
+</html>
